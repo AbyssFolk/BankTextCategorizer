@@ -167,7 +167,7 @@ class AddData(QWidget):
 
             # Initialize QProgressDialog
             progress = QProgressDialog("Processing data...", "Cancel", 0, 100, self)
-            progress.setWindowModality(Qt.WindowModal)
+            progress.setWindowModality(Qt.WindowModality.WindowModal)
             self.logic.progress_signal.connect(progress.setValue)
             progress.show()
 
@@ -197,3 +197,4 @@ class AddData(QWidget):
 
         except Exception as e:
             msg_box.show_critical("Error", f"An error occurred during saving: {str(e)}")
+
